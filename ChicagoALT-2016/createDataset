@@ -1,5 +1,5 @@
 #!/bin/bash
-FILEURL=https://data.caida.org/datasets/passive-2016/equinix-chicago/20160121-130000.UTC/equinix-chicago.dirA.20160121-130000.UTC.anon.pcap.gz
+FILEURL=https://data.caida.org/datasets/passive-2016/equinix-chicago/20160121-130000.UTC/equinix-chicago.dirA.20160121-125911.UTC.anon.pcap.gz
 #ATTENTION: THIS SCRIPT WILL FAIL WITHOUT A USERNAME AND PASSWORD. PLEASE VISIT www.caida.org.
 
 USERPASS=${CAIDA_USERNAME}:${CAIDA_PASSWORD} #Enter your credentials!

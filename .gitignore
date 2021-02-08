@@ -1,3 +1,4 @@
 # Ignore all downloaded dataset files
 **/*.pcap.gz
 **/trace_*
+**/*.pcap

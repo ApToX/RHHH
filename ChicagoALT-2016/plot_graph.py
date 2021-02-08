@@ -60,13 +60,14 @@ def graph(rhh_confidence_intervals, _10_rhh_confidence_intervals, graph_name, x_
 	ax.set_xlabel(x_label)
 	ax.set_ylabel(y_label)
 	ax.set_ylim([0,100])
-	ax.set_xlim([2**19,2**25])
-        plt.setp(ax, xticks=[2**x for x in range(19, 26)], xticklabels=["2^%s"%x for x in range(19, 26)])
-        ax.set_xscale("log", basex=2)
+	#ax.set_xlim([2**19,2**25])
+	#ax.set_xticks([2**x for x in range(19, 26)])
+	#ax.set_xticklabels(["2^%s"%x for x in range(19, 26)])
+	ax.set_xscale("log", basex=2)
         red_patch = mpatches.Patch(color='red', label='RHHH')
         blue_patch = mpatches.Patch(color='blue', label='10-RHHH')
         plt.legend(handles=[red_patch, blue_patch])
-        plt.title(graph_name)
+	plt.title(graph_name)
 	fig.savefig("_".join(graph_name.split()) + '_fig.png')
 
 # Uses the student t distribution to compute a 95% confidence interval
@@ -82,8 +83,8 @@ def confidence_interval_95(data):
         return (m-h, m+h)
         
 def main():
-	rhhh_results = parse_file("trace_chicago2015_RandHHH2D_output.txt")
-	_10_rhhh_results = parse_file("trace_chicago2015_10RandHHH2D_output.txt")
+	rhhh_results = parse_file("trace_chicago2016_RandHHH2D_output.txt")
+	_10_rhhh_results = parse_file("trace_chicago2016_10RandHHH2D_output.txt")
 
 	accuracy_error_rates = extract_accuracy_error_rates(rhhh_results)
 	coverage_error_rates = extract_coverage_error_rates(rhhh_results)
